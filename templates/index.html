@@ -24,12 +24,12 @@
         </button>
       </div>
         <section class="container card-group">
-             {% for item in items%}
+             {% for item in item%}
             <div class="card m-3 rounded" style="width: 18rem; max-width: 18rem">
-                <img src="{{ url_for('static', filename='img/'+ items[4]) }}" class="card-img-rounded" alt="...">
+                <img src="{{ url_for('static', filename='img/'+ item[4]) }}" class="card-img-rounded" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title">{{items[2]}}</h5>
-                  <p class="card-text">{{items[5]}} грн</p>
+                  <h5 class="card-title">{{item[2]}}</h5>
+                  <p class="card-text">{{item[5]}} грн</p>
                   <a href="{{ url_for('item', item_id=item[0]) }}" class="btn btn-outline-dark stretched-link">Купити</a>
                 </div>
               </div>
