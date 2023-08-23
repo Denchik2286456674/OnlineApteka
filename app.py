@@ -8,7 +8,7 @@ db = AptekaDB()
 def index():
     items = db.get_all_items()
 
-    return render_template("index.html", item=item)
+    return render_template("index.html", items=items)
 
 @app.route("/item/<item_id>")
 def item(item_id):
