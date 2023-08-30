@@ -1,1 +1,1 @@
-SECRET_KEY = "67jv84984pjfg"
+SECRET_KEY = "67jv84984pjfg574u54yt054yt"

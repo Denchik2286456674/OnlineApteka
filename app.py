@@ -1,5 +1,6 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, flash, redirect, url_for
 from sql_queries import AptekaDB
+from settings import *
 
 app = Flask(__name__)
 db = AptekaDB()
@@ -10,12 +11,13 @@ app.config['SECRET_KEY'] = SECRET_KEY
 def index():
     categories = db.get_categories()
     items = db.get_all_items()
+    print(items)
 
     return render_template("index.html", items=items, categories=categories)
 
 @app.route("/item/<item_id>")
 def item(item_id):
-    icategories = db.get_categories()
+    categories = db.get_categories()
     item = db.get_item(item_id)
 
     return render_template("item.html", item=item, categories=categories)
