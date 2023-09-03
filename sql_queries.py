@@ -28,15 +28,14 @@ class AptekaDB:
         self.close()
         return data
 
-        def add_order(self, *data):
-
-            self.open()
-            self.cursor.execute('''INSERT INTO orders (item_id, name, 
-            phone, email, city, address, cost) 
-                            VALUES((?),(?),(?),(?),(?),(?),(?))
-                            ''', [*data])
-            self.conn.commit()
-            self.close()
+    def add_order(self, *data):
+        self.open()
+        self.cursor.execute('''INSERT INTO orders (item_id, name, 
+        phone, email, city, address, cost) 
+                        VALUES((?),(?),(?),(?),(?),(?),(?))
+                        ''', [*data])
+        self.conn.commit()
+        self.close()
 
     def get_categories(self):
         self.open()
